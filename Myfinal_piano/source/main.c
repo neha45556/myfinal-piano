@@ -43,29 +43,20 @@ enum states {init, sound1, sound2} state;
 void sound(){
 	switch(state){
 		case init:
-			if(buttons == 0x01){
+			if(buttons == 0x00){
 				state = sound1;
 			}
-// 			if(buttons == 0x02){
-// 				state = sound2;
-			//}
 			state = init; 
 			
 		break;
 		case sound1:
-			if(buttons == 0x01){
+			if(buttons == 0x00){
 				state = sound1;
 			}
 			else{
 				state = init;
 			}
 		break;
-// 		case sound2:
-// 			if(PA0){
-// 				state = sound1;
-// 			}
-// 			state = sound2;
-// 			break;
 		default:
 			state = init;
 			break;
@@ -77,9 +68,6 @@ void sound(){
 		case sound1:
 			set_PWM(261.63);
 			break;
-// 		case sound2:
-// 			set_PWM(293.66);
-// 			break;
 		default:
 			break;
 	}
