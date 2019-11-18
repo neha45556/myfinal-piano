@@ -66,6 +66,9 @@ void sound(){
 // 			}
 // 			state = sound2;
 // 			break;
+		default:
+			state = init;
+			break;
 	}
 	switch(state){
 		case init:
@@ -76,6 +79,8 @@ void sound(){
 			break;
 		case sound2:
 			set_PWM(293.66);
+			break;
+		default:
 			break;
 	}
 				
