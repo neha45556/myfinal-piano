@@ -37,7 +37,7 @@ void PWM_off(){
 }
 
 
-#define buttons (~PINA & 0xFF)
+#define buttons (~PINA & 0x01)
 
 enum states {init, sound1, sound2} state;
 void sound(){
@@ -72,14 +72,14 @@ void sound(){
 	}
 	switch(state){
 		case init:
-			set_PWM(523.25);
+			set_PWM(0);
 			break;
 		case sound1:
 			set_PWM(261.63);
 			break;
-		case sound2:
-			set_PWM(293.66);
-			break;
+// 		case sound2:
+// 			set_PWM(293.66);
+// 			break;
 		default:
 			break;
 	}
