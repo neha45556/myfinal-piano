@@ -9,15 +9,15 @@
  */
 #include <avr/io.h>
 #ifdef _SIMULATE_
-#include "simAVRHeader.h"
+#include "/Users/nehagupta/Downloads/simavr-master/simavr/sim/avr/avr_mcu_section.h"
 #endif
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-
+    DDRB = 0xFF; PORTB = 0x00;
     /* Insert your solution below */
     while (1) {
-
+	PORTB = 0x04;
     }
     return 1;
 }
