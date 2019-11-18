@@ -36,25 +36,24 @@ void PWM_off(){
     TCCR3B = 0x00;
 }
 
-#define PA0 (~PINA & 0x01)
-#define PA1 (~PINA & 0x02)
+
 #define buttons (~PINA & 0xFF)
 
 enum states {init, sound1, sound2} state;
 void sound(){
 	switch(state){
 		case init:
-			if(button == 0x01){
+			if(buttons == 0x01){
 				state = sound1;
 			}
-			if(button == 0x02){
+			if(buttons == 0x02){
 				state = sound2;
 			}
 			state = init; 
 			
 		break;
 		case sound1:
-			if(button == 0x01){
+			if(buttons == 0x01){
 				state = sound1;
 			}
 			else{
