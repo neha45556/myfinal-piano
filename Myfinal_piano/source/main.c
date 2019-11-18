@@ -48,7 +48,7 @@ void sound(){
 			}
 // 			if(buttons == 0x02){
 // 				state = sound2;
-			}
+			//}
 			state = init; 
 			
 		break;
