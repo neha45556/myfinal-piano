@@ -46,8 +46,8 @@ void sound(){
 			if(buttons == 0x01){
 				state = sound1;
 			}
-			if(buttons == 0x02){
-				state = sound2;
+// 			if(buttons == 0x02){
+// 				state = sound2;
 			}
 			state = init; 
 			
