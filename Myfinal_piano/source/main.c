@@ -69,7 +69,7 @@ void sound(){
 	}
 	switch(state){
 		case init:
-			set_PWM(261.63);
+			set_PWM(523.25);
 			break;
 		case sound1:
 			set_PWM(261.63);
