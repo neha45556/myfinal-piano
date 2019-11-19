@@ -39,25 +39,136 @@ void PWM_off(){
 
 #define buttons (~PINA & 0x07)
 
-enum states {init, sound1, sound2} state;
+enum states {init, C, D, E, F, G, A, B} state;
 void sound(){
 	switch(state){
 		case init:
-			if(buttons == 0x04){
-				state = sound1;
+			if(buttons == 0x01){
+				state = C;
+			}
+			else if(buttons == 0x02){
+				state = D;
+			}
+			else if(buttons == 0x04){
+				state = E;
+			}
+			else if(buttons == 0x08){
+				state = F;
+			}
+			else if(buttons == 0x10){
+				state = G;
+			}
+// 			else if(buttons == 0x20){
+// 				state = A;
+// 			}
+// 			else if(buttons == 0x40){
+// 				state = B;
 			}
 			else{
 				state = init; 
 			}	
 		break;
-		case sound1:
-			if(buttons == 0x04){
-				state = sound1;
+		case C:
+			if(buttons == 0x01){
+				state = C;
+			}
+			else if(buttons == 0x02){
+				state = D;
+			}
+			else if(buttons == 0x04){
+				state = E;
+			}
+			else if(buttons == 0x08){
+				state = F;
+			}
+			else if(buttons == 0x10){
+				state = G;
 			}
 			else{
 				state = init;
 			}
 		break;
+		case D:
+			if(buttons == 0x01){
+				state = C;
+			}
+			else if(buttons == 0x02){
+				state = D;
+			}
+			else if(buttons == 0x04){
+				state = E;
+			}
+			else if(buttons == 0x08){
+				state = F;
+			}
+			else if(buttons == 0x10){
+				state = G;
+			}
+			else{
+				state = init;
+			}
+		break;
+		case E:
+			if(buttons == 0x01){
+				state = C;
+			}
+			else if(buttons == 0x02){
+				state = D;
+			}
+			else if(buttons == 0x04){
+				state = E;
+			}
+			else if(buttons == 0x08){
+				state = F;
+			}
+			else if(buttons == 0x10){
+				state = G;
+			}
+			else{
+				state = init;
+			}
+		break;
+		case F:
+			if(buttons == 0x01){
+				state = C;
+			}
+			else if(buttons == 0x02){
+				state = D;
+			}
+			else if(buttons == 0x04){
+				state = E;
+			}
+			else if(buttons == 0x08){
+				state = F;
+			}
+			else if(buttons == 0x10){
+				state = G;
+			}
+			else{
+				state = init;
+			}
+		break;
+		case G:
+			if(buttons == 0x01){
+				state = C;
+			}
+			else if(buttons == 0x02){
+				state = D;
+			}
+			else if(buttons == 0x04){
+				state = E;
+			}
+			else if(buttons == 0x08){
+				state = F;
+			}
+			else if(buttons == 0x10){
+				state = G;
+			}
+			else{
+				state = init;
+			}
+		break;
+	
 		default:
 			state = init;
 			break;
@@ -66,8 +177,20 @@ void sound(){
 		case init:
 			set_PWM(0);
 			break;
-		case sound1:
+		case C:
 			set_PWM(261.63);
+			break;
+		case D:
+			set_PWM(293.66);
+			break;
+		case E:
+			set_PWM(329.63);
+			break;
+		case F:
+			set_PWM(349.23);
+			break;
+		case G:
+			set_PWM(392.00);
 			break;
 		default:
 			break;
