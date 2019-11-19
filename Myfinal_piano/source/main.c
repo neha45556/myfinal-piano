@@ -37,7 +37,7 @@ void PWM_off(){
 }
 
 
-#define buttons (~PINA & 0x07)
+#define buttons (~PINA & 0x7F)
 
 enum states {init, C, D, E, F, G, A, B} state;
 void sound(){
