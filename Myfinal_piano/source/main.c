@@ -48,8 +48,7 @@ void sound(){
 			}
 			else{
 				state = init; 
-			}
-			
+			}	
 		break;
 		case sound1:
 			if(buttons == 0x04){
