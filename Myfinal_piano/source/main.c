@@ -63,7 +63,7 @@ void sound(){
 // 			}
 // 			else if(buttons == 0x40){
 // 				state = B;
-			}
+			//}
 			else{
 				state = init; 
 			}	
