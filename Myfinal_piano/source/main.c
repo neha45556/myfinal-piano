@@ -37,7 +37,7 @@ void PWM_off(){
 }
 
 
-#define buttons (~PINA & 0x07)
+#define buttons (~PINA & 0xFF)
 
 enum states {init, C, D, E, F, G, A, B} state;
 void sound(){
@@ -55,7 +55,7 @@ void sound(){
 			else if(buttons == 0x08){
 				state = F;
 			}
-			else if(buttons == 0x0F){
+			else if(buttons == 0x10){
 				state = G;
 			}
 // 			else if(buttons == 0x20){
