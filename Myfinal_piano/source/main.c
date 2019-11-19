@@ -55,7 +55,7 @@ void sound(){
 			else if(buttons == 0x08){
 				state = F;
 			}
-			else if(A4 == 0x01){
+			else if(buttons == 0x10){
 				state = G;
 			}
 // 			else if(buttons == 0x20){
@@ -81,7 +81,7 @@ void sound(){
 			else if(buttons == 0x08){
 				state = F;
 			}
-			else if(A4 == 0x01){
+			else if(buttons == 0x10){
 				state = G;
 			}
 			else{
@@ -101,7 +101,7 @@ void sound(){
 			else if(buttons == 0x08){
 				state = F;
 			}
-			else if(A4 == 0x01){
+			else if(buttons == 0x10){
 				state = G;
 			}
 			else{
@@ -121,7 +121,7 @@ void sound(){
 			else if(buttons == 0x08){
 				state = F;
 			}
-			else if(A4 == 0x01){
+			else if(buttons == 0x10){
 				state = G;
 			}
 			else{
@@ -141,7 +141,7 @@ void sound(){
 			else if(buttons == 0x08){
 				state = F;
 			}
-			else if(A4 == 0x01){
+			else if(buttons == 0x10){
 				state = G;
 			}
 			else{
@@ -161,7 +161,7 @@ void sound(){
 			else if(buttons == 0x08){
 				state = F;
 			}
-			else if(A4 == 0x01){
+			else if(buttons == 0x10){
 				state = G;
 			}
 			else{
