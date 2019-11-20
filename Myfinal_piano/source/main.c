@@ -8,9 +8,79 @@
  *	code, is my own original work.
  */
 #include <avr/io.h>
+#include <util/delay.h>
 #ifdef _SIMULATE_
 #include "/Users/nehagupta/Downloads/simavr-master/simavr/sim/avr/avr_mcu_section.h"
 #endif
+
+#define HC595_PORT   PORTD
+#define HC595_DDR    DDRD
+
+#define HC595_DS_POS PD0      //Data pin (DS) pin location
+
+#define HC595_SH_CP_POS PD1      //Shift Clock (SH_CP) pin location 
+#define HC595_ST_CP_POS PD2 	//Store Clock (ST_CP) pin location
+
+void HC595Init()
+{
+   //Make the Data(DS), Shift clock (SH_CP), Store Clock (ST_CP) lines output
+   HC595_DDR|=((1<<HC595_SH_CP_POS)|(1<<HC595_ST_CP_POS)|(1<<HC595_DS_POS));
+}
+
+#define HC595DataHigh() (HC595_PORT|=(1<<HC595_DS_POS))
+
+#define HC595DataLow() (HC595_PORT&=(~(1<<HC595_DS_POS)))
+
+void HC595Pulse()
+{
+   //Pulse the Shift Clock
+
+   HC595_PORT|=(1<<HC595_SH_CP_POS);//HIGH
+
+   HC595_PORT&=(~(1<<HC595_SH_CP_POS));//LOW
+
+}
+
+void HC595Latch()
+{
+   //Pulse the Store Clock
+
+   HC595_PORT|=(1<<HC595_ST_CP_POS);//HIGH
+   _delay_loop_1(1);
+
+   HC595_PORT&=(~(1<<HC595_ST_CP_POS));//LOW
+   _delay_loop_1(1);
+}
+
+void HC595Write(uint8_t data)
+{
+   for(uint8_t i=0;i<8;i++)
+   {
+      if(data & 0b10000000)
+      {
+         HC595DataHigh();
+      }
+      else
+      {
+         HC595DataLow();
+      }
+
+      HC595Pulse();  
+      data=data<<1;  
+
+   }
+   HC595Latch();
+}
+
+void Wait()
+{
+   for(uint8_t i=0;i<30;i++)
+   {
+      _delay_loop_2(0);
+   }
+}
+
+
 
 void set_PWM(double frequency){
     static double current_frequency;
@@ -257,12 +327,15 @@ void sound(){
 	switch(state){
 		case init:
 			set_PWM(0);
+			HC595Write(0b00000000);
 			break;
 		case C:
 			set_PWM(261.63);
+			HC595Write(0b00000001);
 			break;
 		case D:
 			set_PWM(293.66);
+			HC595Write(0b00000010);
 			break;
 		case E:
 			set_PWM(329.63);
@@ -291,7 +364,9 @@ int main(void){
   	DDRA = 0x00; PORTA = 0xFF;
 	DDRB = 0xFF; PORTB = 0x00;
 	PWM_on();
+	HC595Init();
 	state = init;
+	uint8_t led_pattern = 0b00000000;
 	while(1) {
 		sound();
 	}
