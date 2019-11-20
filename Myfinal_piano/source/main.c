@@ -294,6 +294,7 @@ void sound(){
 			else{
 				state = init;
 			}
+		break;
 		case B:
 			if(buttons == 0x01){
 				state = C;
@@ -320,7 +321,7 @@ void sound(){
 				state = init;
 			}
 			
-	
+		break;
 		default:
 			state = init;
 			break;
@@ -374,8 +375,14 @@ int main(void){
 	state = init;
 	//uint8_t led_pattern ;
 	while(1) {
+		if(~PINA & 0x01 == 1){
+		HC595Write(0b00000001);
+		}
 		HC595Write(0b00000000);
-		sound();
+		
+		/*
+		HC595Write(0b00000000);
+		sound();*/
 	}
 	return 1;
 }
