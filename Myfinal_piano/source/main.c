@@ -375,7 +375,7 @@ int main(void){
 	state = init;
 	//uint8_t led_pattern ;
 	while(1) {
-		if(~PINA & 0x01 == 1){
+		if(buttons == 0x01){
 		HC595Write(0b00000001);
 		}
 		HC595Write(0b00000000);
