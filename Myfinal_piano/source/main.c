@@ -366,38 +366,8 @@ void sound(){
 			
 }
 
-void main()
-{
-   uint8_t led_pattern[8]={
-                        0b10000001,
-                        0b11000011,
-                        0b11100111,
-                        0b11111111,
-                        0b01111110,
-                        0b00111100,
-                        0b00011000,
-                        0b00000000,
-                     };
-
-   //Initialize HC595 system
-
-   HC595Init();
-
-   while(1)
-   {
-      for(uint8_t i=0;i<8;i++)
-      {
-         HC595Write(led_pattern[i]);   //Write the data to HC595
-         Wait();                 //Wait 
-
-      }
-   }
 
 
-}
-
-
-/*
 int main(void){
   	DDRA = 0x00; PORTA = 0xFF;
 	DDRB = 0xFF; PORTB = 0x00;
@@ -418,11 +388,9 @@ int main(void){
 			
 		
 		
-		HC595Write(0b00000000);
-		sound();
+		//HC595Write(0b00000000);
+		//sound();
 	}
 	return 1;
 }
-
-*/
 
