@@ -333,15 +333,15 @@ void sound(){
 			break;
 		case C:
 			set_PWM(261.63);
-			HC595Write(0b10000000);
+			HC595Write(0b00000010);
 			break;
 		case D:
 			set_PWM(293.66);
-			HC595Write(0b01000000);
+			HC595Write(0b00000100);
 			break;
 		case E:
 			set_PWM(329.63);
-			HC595Write(0b00100000);
+			HC595Write(0b00001000);
 			break;
 		case F:
 			set_PWM(349.23);
@@ -349,15 +349,15 @@ void sound(){
 			break;
 		case G:
 			set_PWM(392.00);
-			HC595Write(0b00001000);
+			HC595Write(0b00100000);
 			break;
 		case A:
 			set_PWM(440.00);
-			HC595Write(0b00000100);
+			HC595Write(0b01000000);
 			break;
 		case B:
 			set_PWM(493.88);
-			HC595Write(0b00000010);
+			HC595Write(0b10000000);
 			break;
 		default:
 			break;
@@ -377,44 +377,6 @@ int main(void){
 	state = init;
 	//uint8_t led_pattern ;
 	while(1) {
-		/*
-		if(buttons == 0x01){
-		HC595Write(0b00000000);
-		}
-		else if(buttons == 0x02){
-			HC595Write(0b01000000);
-			
-		}
-		else if(buttons == 0x03){
-			HC595Write(0b11000000);
-			
-		}
-		else if(buttons == 0x04){
-			HC595Write(0b00100000);
-			
-		}
-		else if(buttons == 0x08){
-			HC595Write(0b00010000);
-			
-		}
-		else if(buttons == 0x10){
-			HC595Write(0b00001000);
-			
-		}
-		else if(buttons == 0x20){
-			HC595Write(0b00000100);
-			
-		}
-		else if(buttons == 0x40){
-			HC595Write(0b00000010);
-			
-		}
-		else{
-		HC595Write(0b00000000);
-		}
-		*/
-		
-		
 		HC595Write(0b00000000);
 		sound();
 	}
