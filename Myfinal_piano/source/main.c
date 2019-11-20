@@ -374,7 +374,7 @@ int main(void){
 	state = init;
 	//uint8_t led_pattern ;
 	while(1) {
-		HC595Write(0b00000000)
+		HC595Write(0b00000000);
 		sound();
 	}
 	return 1;
