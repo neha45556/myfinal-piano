@@ -377,8 +377,9 @@ int main(void){
 	state = init;
 	//uint8_t led_pattern ;
 	while(1) {
+		/*
 		if(buttons == 0x01){
-		HC595Write(0b00000000 | buttons);
+		HC595Write(0b00000000);
 		}
 		else if(buttons == 0x02){
 			HC595Write(0b01000000);
@@ -411,11 +412,11 @@ int main(void){
 		else{
 		HC595Write(0b00000000);
 		}
-			
+		*/
 		
 		
-		//HC595Write(0b00000000);
-		//sound();
+		HC595Write(0b00000000);
+		sound();
 	}
 	return 1;
 }
