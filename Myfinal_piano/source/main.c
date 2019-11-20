@@ -378,7 +378,7 @@ int main(void){
 	//uint8_t led_pattern ;
 	while(1) {
 		if(buttons == 0x01){
-		HC595Write(0b10000000);
+		HC595Write(0x01);
 		}
 		else if(buttons == 0x02){
 			HC595Write(0b01000000);
