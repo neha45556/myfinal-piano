@@ -333,11 +333,11 @@ void sound(){
 			break;
 		case C:
 			set_PWM(261.63);
-			HC595Write(0b00000001);
+			HC595Write(0b00000000);
 			break;
 		case D:
 			set_PWM(293.66);
-			HC595Write(0b00000010);
+			HC595Write(0b01000000);
 			break;
 		case E:
 			set_PWM(329.63);
@@ -345,7 +345,7 @@ void sound(){
 			break;
 		case F:
 			set_PWM(349.23);
-			HC595Write(0b00001000);
+			HC595Write(0b00100000);
 			break;
 		case G:
 			set_PWM(392.00);
