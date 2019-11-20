@@ -379,7 +379,6 @@ int main(void){
 	while(1) {
 		if(buttons == 0x01){
 		HC595Write(0b10000000);
-			Wait();
 		}
 		else if(buttons == 0x02){
 			HC595Write(0b01000000);
