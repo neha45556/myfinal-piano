@@ -366,7 +366,7 @@ int main(void){
 	PWM_on();
 	HC595Init();
 	state = init;
-	uint8_t led_pattern = 0b00000000;
+	//uint8_t led_pattern = 0b00000000;
 	while(1) {
 		sound();
 	}
