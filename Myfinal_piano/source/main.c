@@ -382,19 +382,27 @@ int main(void){
 		}
 		else if(buttons == 0x02){
 			HC595Write(0b01000000);
-			Wait();
+			
 		}
 		else if(buttons == 0x04){
 			HC595Write(0b00100000);
-			Wait();
+			
 		}
 		else if(buttons == 0x08){
 			HC595Write(0b00010000);
-			Wait();
+			
 		}
 		else if(buttons == 0x10){
 			HC595Write(0b00001000);
-			Wait();
+			
+		}
+		else if(buttons == 0x20){
+			HC595Write(0b00000100);
+			
+		}
+		else if(buttons == 0x40){
+			HC595Write(0b00000010);
+			
 		}
 		else{
 		HC595Write(0b00000000);
