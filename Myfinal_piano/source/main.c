@@ -340,18 +340,23 @@ void sound(){
 			break;
 		case E:
 			set_PWM(329.63);
+			HC595Write(0b00000100);
 			break;
 		case F:
 			set_PWM(349.23);
+			HC595Write(0b00001000);
 			break;
 		case G:
 			set_PWM(392.00);
+			HC595Write(0b00010000);
 			break;
 		case A:
 			set_PWM(440.00);
+			HC595Write(0b01000000);
 			break;
 		case B:
 			set_PWM(493.88);
+			HC595Write(0b10000000);
 			break;
 		default:
 			break;
@@ -367,8 +372,9 @@ int main(void){
 	PWM_on();
 	HC595Init();
 	state = init;
-	//uint8_t led_pattern = 0b00000000;
+	//uint8_t led_pattern ;
 	while(1) {
+		HC595Write(0b00000000)
 		sound();
 	}
 	return 1;
