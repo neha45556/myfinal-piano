@@ -378,7 +378,10 @@ int main(void){
 		if(buttons == 0x01){
 		HC595Write(0b00000001);
 		}
+		else{
 		HC595Write(0b00000000);
+		}
+			
 		
 		/*
 		HC595Write(0b00000000);
