@@ -392,7 +392,7 @@ int main(void){
 
 /*I2C_scanner
   This sketch tests standard 7-bit addresses.
-  Devices with higher bit address might not be seen properly.*/
+  Devices with higher bit address might not be seen properly. */
   
 #include <Wire.h>
 void setup() {
