@@ -8,8 +8,8 @@
  *	code, is my own original work.
  */
 
-/*
-#include <avr/io.h>
+
+/* #include <avr/io.h> 
 #define F_CPU 8000000UL
 #include <util/delay.h>
 #include <Wire.h>
@@ -387,12 +387,10 @@ int main(void){
 	return 1;
 }
 
-/*
+
+*/
 
 
-/*I2C_scanner
-  This sketch tests standard 7-bit addresses.
-  Devices with higher bit address might not be seen properly. */
   
 #include <Wire.h>
 void setup() {
