@@ -12,11 +12,10 @@
 #include <avr/io.h> 
 #define F_CPU 8000000UL
 #include <util/delay.h>
-#include <Wire.h>
 #ifdef _SIMULATE_
 #include "/Users/nehagupta/Downloads/simavr-master/simavr/sim/avr/avr_mcu_section.h"
 #endif
-#include "io.h"
+#include "io.c"
 
 #define HC595_PORT   PORTD
 #define HC595_DDR    DDRD
