@@ -393,6 +393,8 @@ int main(void){
 
 #include <avr/io.h>
 #include "io.h"
+#include "/Users/nehagupta/Downloads/simavr-master/simavr/sim/avr/avr_mcu_section.h"
+
 
 int main(void){
 	DDRC = 0xFF; PORTC = 0x00;
