@@ -16,6 +16,7 @@
 #ifdef _SIMULATE_
 #include "/Users/nehagupta/Downloads/simavr-master/simavr/sim/avr/avr_mcu_section.h"
 #endif
+#include "io.h"
 
 #define HC595_PORT   PORTD
 #define HC595_DDR    DDRD
@@ -378,8 +379,10 @@ int main(void){
 	DDRC = 0xFF; PORTC = 0x00;
 	PWM_on();
 	HC595Init();
+	LCD_init();
 	state = init;
 	//uint8_t led_pattern ;
+	LCD_DisplayString(1,"heloo");
 	while(1) {
 		HC595Write(0b00000000);
 		sound();
