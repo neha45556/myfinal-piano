@@ -15,7 +15,7 @@
 #ifdef _SIMULATE_
 #include "/Users/nehagupta/Downloads/simavr-master/simavr/sim/avr/avr_mcu_section.h"
 #endif
-#include "io.c"
+#include "io.h"
 
 #define HC595_PORT   PORTD
 #define HC595_DDR    DDRD
