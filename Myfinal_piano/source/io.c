@@ -79,7 +79,7 @@ void delay_ms(int miliSec) //for 8 Mhz crystal
   }
 }
 
-void LCD_Custom_Char (unsigned char loc, unsigned char *msg)
+void LCD_Custom_Char (unsigned char loc, const unsigned char *msg)
 {
     unsigned char i;
     if(loc<8)
